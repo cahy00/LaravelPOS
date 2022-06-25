@@ -13,7 +13,7 @@ class TodoController extends Controller
      */
     public function index()
     {
-        return 'ini view index';
+				return 'test';
     }
 
     /**

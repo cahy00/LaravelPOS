@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
 
 class TodoController extends Controller
 {
@@ -34,7 +35,10 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),[
+					'name'        => 'required',
+					'description' => 'required'
+				]);
     }
 
     /**

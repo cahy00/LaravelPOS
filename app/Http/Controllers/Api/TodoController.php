@@ -75,8 +75,8 @@ class TodoController extends Controller
      */
     public function show($id): JsonResponse
     {
+			// $data = $this->todo->findOrFail($id);
         $data = Todo::findOrFail($id);
-				// $data = $this->todo->findOrFail($id);
 
 				return response()->json([
 					'status'	=>	true,

@@ -87,26 +87,37 @@ class TodoController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id): JsonResponse
     {
-        //
+				$data = $this->validate($request,[
+					'name'				=>	'required|max:100',
+					'description'	=>	'nullable'
+				]);
+
+				try {
+					//! proses update data
+					$todo = $this->todo->findOrFail($id);
+					$todo->fill($data);
+					$todo->save();
+					
+					return response()->json([
+						'status'	=>	true,
+						'code'		=>	201,
+						'message'	=>	'Update Todo',
+						'data'		=> 	$todo
+					], 201);
+				} catch (\Exception $e) {
+					return response()->json([
+						'status'		=>	false,
+						'message'		=>	'Data False'
+					], 409);
+				}
     }
 
     /**
@@ -117,6 +128,17 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+					$data = $this->todo->findOrFail($id);
+					$data->delete();
+
+					return response()->json([
+						'status'	=>	true,
+						'code'		=>	201,
+						''	
+					]);
+				} catch (\Throwable $th) {
+					//throw $th;
+				}
     }
 }

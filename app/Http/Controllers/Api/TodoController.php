@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Http\{Request, JsonResponse};
+use App\Models\Todo\Todo;
 
 class TodoController extends Controller
 {

@@ -21,7 +21,14 @@ class TodoController extends Controller
      */
     public function index()
     {
-				return 'test';
+				$data = $this->todo->all();
+
+				return response()->json([
+					'status'	=> true,
+					'code'		=> 201,
+					'message'	=> 'List Todo',
+					'data'		=> $data
+				], 201);
     }
 
     /**
@@ -32,10 +39,6 @@ class TodoController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
-        // $data = Validator::make($request->all(), [
-					
-				// ]);
-
 				$data = $this->validate($request, [
 					'name'        => 'required|max:100',
 					'description' => 'nullable'
@@ -45,7 +48,6 @@ class TodoController extends Controller
 					//!menyimpan data ke database
 					$todo = Todo::create($data);
 					// $todo = $this->todo->create($data);			
-
 
 					//!pesan sukses
 					return response()->json([

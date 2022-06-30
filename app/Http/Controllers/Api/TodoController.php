@@ -32,15 +32,19 @@ class TodoController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
-        $data = Validator::make($request->all(), [
+        // $data = Validator::make($request->all(), [
+					
+				// ]);
+
+				$data = $this->validate($request, [
 					'name'        => 'required|max:100',
 					'description' => 'nullable'
 				]);
 
 				try {
 					//!menyimpan data ke database
-					// $todo = Todo::create($data);
-					$todo = $this->todo->create($data);			
+					$todo = Todo::create($data);
+					// $todo = $this->todo->create($data);			
 
 
 					//!pesan sukses

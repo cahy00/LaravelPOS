@@ -9,6 +9,6 @@ class Todo extends Model
 {
     use HasFactory;
 		protected $fillable = [
-			'id', 'name', 'description'
+			'name', 'description'
 		];
 }

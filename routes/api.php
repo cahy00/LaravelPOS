@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TodoController;
+use App\Http\Controllers\Api\TodoController;
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

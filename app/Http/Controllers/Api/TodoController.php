@@ -135,10 +135,13 @@ class TodoController extends Controller
 					return response()->json([
 						'status'	=>	true,
 						'code'		=>	201,
-						''	
-					]);
-				} catch (\Throwable $th) {
-					//throw $th;
+						'message'	=>	'Data has been delete'
+					], 201);
+				} catch (\Exception $e) {
+					return response()->json([
+						'status'	=>	'false',
+						'message'	=>	'Data failed'
+					], 409);
 				}
     }
 }

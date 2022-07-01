@@ -139,7 +139,7 @@ class TodoController extends Controller
 					], 201);
 				} catch (\Exception $e) {
 					return response()->json([
-						'status'	=>	'false',
+						'status'	=>	false,
 						'message'	=>	'Data failed'
 					], 409);
 				}

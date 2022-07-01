@@ -8,4 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     use HasFactory;
+
+		public $timestamp = false;
+
+		protected $fillable = ['url'];
+
+		public function imageable()
+		{
+				return $this->morphTo();
+		}
+
+		public function getImageUrlAttribute()
+		{
+				$url = '';
+				if(strlen($this->url)>5)
+					$url = url('images/' . $this->url);
+
+				return $url;
+		}
 }

@@ -4,11 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
-class Tables extends Model
+class Cart extends Model
 {
     use HasFactory;
-		protected $fillable = ['name', 'slug'];
+
+		protected $fillable = [
+			'name', 'slug'
+		];
 
 		public function setSlugAttribute($value)
 		{

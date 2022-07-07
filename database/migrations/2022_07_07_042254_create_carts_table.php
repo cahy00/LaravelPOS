@@ -8,12 +8,12 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     * 
+     *
      * @return void
      */
     public function up()
     {
-        Schema::create('tableas', function (Blueprint $table) {
+        Schema::create('carts', function (Blueprint $table) {
             $table->id();
 						$table->string('name');
 						$table->string('slug')->unique();
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tables');
+        Schema::dropIfExists('carts');
     }
 };

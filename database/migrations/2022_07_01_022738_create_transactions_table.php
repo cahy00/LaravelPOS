@@ -18,9 +18,9 @@ return new class extends Migration
 						$table->foreignId('user_id')
 									->constrained()
 									->onUpdate('cascade');
-						// $table->foreignId('table_id')
-						// 			->constrained()
-						// 			->onUpdate('cascade');
+						$table->foreignId('cart_id')
+									->constrained()
+									->onUpdate('cascade');
 						$table->string('invoice')->unique();
 						$table->integer('total')->default(0);
 						$table->integer('pay')->default(0);

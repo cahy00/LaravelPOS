@@ -19,7 +19,7 @@ return new class extends Migration
 									->constrained()
 									->onUpdate('cascade');
 						$table->foreignId('cart_id')
-									->constrained()
+									// ->constrained()
 									->onUpdate('cascade');
 						$table->string('invoice')->unique();
 						$table->integer('total')->default(0);

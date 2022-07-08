@@ -14,4 +14,14 @@ class Transaction extends Model
 			'user_id', 'cart_id', 'invoice', 'total',
 			'pay', 'change', 'status'
 		];
+
+		public function users()
+		{
+				return $this->belongsTo(User::class);
+		}
+
+		public function carts()
+		{
+				return $this->belongsTo(Cart::class);
+		}
 }

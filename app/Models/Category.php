@@ -15,6 +15,23 @@ class Category extends Model
 			'name', 'slug'
 		];
 
+		protected $hidden = ['image'];
+		protected $appends = ['image_url'];
+
+		public function image()
+		{
+				return $this->morphOne(Image::class, 'imageable');
+		}
+
+		public function getImageUrlAttribute()
+		{
+				$url = '';
+				if(strlen($this->image)>5)
+					$url = url('images/' . $this->image->url);
+
+				return $url;
+		}
+
 		public function setSlugAttribute($value)
 		{
 				$this->attributes['slug'] = Str::slug($value);
@@ -24,4 +41,6 @@ class Category extends Model
 		{
 				return $this->hasMany(Item::class);
 		}
+
+		
 }

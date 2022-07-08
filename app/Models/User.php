@@ -32,4 +32,9 @@ class User extends Authenticatable
         'password',
     ];
 
+		public function transactions()
+		{
+				return $this->hasMany(Transaction::class);
+		}
+
 }

@@ -9,5 +9,20 @@ class TransactionDetail extends Model
 {
     use HasFactory;
 
-		protected $guarded = ['id'];
+		// protected $guarded = ['id'];
+
+		protected $fillable = [
+			'transaction_id', 'item_id', 'quantity',
+			'price', 'subtotal'
+		];
+
+		public function transactions()
+		{
+				return $this->belongsTo(Transaction::class);
+		}
+
+		public function items()
+		{
+				return $this->belongsTo(Item::class);
+		}
 }

@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
 				// $datas = [];
 
 				// DB::table('users')->insert($datas);
-				$insert = User::insert([
+				$datas = User::insert([
 					[
 						'name' 		 => 'Admin Oke',
 						'email' 	 => 'adminoke@gmail.com',

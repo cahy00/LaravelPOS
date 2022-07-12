@@ -16,8 +16,13 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
+				$name = $this->faker->jobTitle;
+				$nameArr = explode('', $name);
+
+				$name = trim($nameArr[0]);
         return [
-            
+            'name' => $name,
+						'slug' =>	$name
         ];
     }
 }

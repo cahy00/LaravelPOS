@@ -18,8 +18,8 @@ class UserSeeder extends Seeder
     public function run()
     {
 				// $datas = [];
-
 				// DB::table('users')->insert($datas);
+				
 				$datas = User::insert([
 					[
 						'name' 		 => 'Admin Oke',

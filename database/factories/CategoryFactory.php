@@ -25,7 +25,7 @@ class CategoryFactory extends Factory
     {
         return [
             'name' => $this->faker->jobTitle,
-						// 'slug' =>	Str::slug('name')dssd
+						// 'slug' =>	Str::slug('name')dssdds
         ];
     }
 }

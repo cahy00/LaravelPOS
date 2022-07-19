@@ -13,7 +13,7 @@ class Image extends Model
 
 		protected $fillable = ['url'];
 
-		public function imageable()fgbnfggfghhjgh
+		public function imageable()
 		{
 				return $this->morphTo();
 		}

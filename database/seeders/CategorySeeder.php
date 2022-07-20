@@ -21,5 +21,13 @@ class CategorySeeder extends Seeder
 				$category = \App\Models\Category::factory()
 									->count($count)
 									->create();
+				
+				\App\Models\Category::all()->each(function ($category) use ($faker){
+					$category->image()->create([
+						'url' => $faker->imageUrl(360, 360, 'animals', true, 'cats')
+					]);
+				});
+
+				$this->command->info('Category Seeder Berhasil');
     }
 }

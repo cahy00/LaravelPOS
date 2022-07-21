@@ -19,7 +19,7 @@ class CartFactory extends Factory
     {
 
         return [
-            $name = 
+            $name = $this->faker->jobTitle
         ];
     }
 }

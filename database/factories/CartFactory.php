@@ -20,6 +20,6 @@ class CartFactory extends Factory
 
         return [
             $name = $this->faker->jobTitle
-        ];dssddssdsdsdsd
+        ];dssddssdsdsdsdsd
     }
 }

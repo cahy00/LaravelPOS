@@ -15,7 +15,7 @@ class CartFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()dsdsds
+    public function definition()dsdsdsds
     {
 
         return [
